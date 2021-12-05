@@ -54,8 +54,30 @@ let model = {
 };
 
 let controller = {
-   
+   guesses: 0,
+
+   processGuess: function(guess) {
+
+   }
+
 };
+
+function parseGuess(guess) {
+   let alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+   let firstChar = guess.charAt(0);
+   let row = alphabet.indexOf(firstChar);
+   let column = guess.charAt(1);
+   if (guess === null || guess.length !== 2) {
+      alert("Oops, please enter a letter and a number on the board");
+   } else if (isNaN(row) || isNaN(column)) {
+      alert("Oops, that is not on the board"); 
+   } else if (row < 0 || row >= model.boardSize || column < 0 || column >= model.boardSize) {
+      alert("Oops, that's out of the board");
+   }
+}
+
+
+parseGuess('A21');
 
 model.fire('00');
 model.fire('64');
