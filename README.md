@@ -1,67 +1,16 @@
-# battleship-game-repo
+# title(){return this.options.title||this.options.name}
 
-![Design preview for the Space tourism website coding challenge](./assets/preview.jpg)
+## Supporting Scrimba
 
-## Welcome! 👋
-## Table of contents
+Since 2017, we have created over 20 free courses on Scrimba, and we're going to
+continue launching free courses. But to pay our bills, we have to charge once
+in a while. So if you've ever wanted to "give back" to Scrimba, you can do that by buying
+	one of our paid courses
 
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Become a professional React developer](https://scrimba.com/course/greact)
+- [The Responsive Web Design Bootcamp](https://scrimba.com/course/gresponsive)
+- [The Ultimate JavaScript Bootcamp](https://scrimba.com/course/gjavascript)
 
-## My process
+	It would also mean the world to us if you share the courses.  
 
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- CSS utility classes
-
-
-### What I learned
-
-1) the way to present ships in the game within OOP
-
-```js
-let model = {
-  
-  ships = [
-    { locations: ["", "", ""], hits: ["", "", ""] },
-    { locations: ["", "", ""], hits: ["", "", ""] },
-    
-  ],
-  
-};
-```
-
-### Continued development
-
-* CSS grid;
-
-*Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-### Useful resources
-
-- [Grid Attack](https://codingfantasy.com) - This helped me practice CSS GRID. Challenging and interactive game aimed at learning the css grid properties' application.
-
-- [Git + GitHub](https://www.youtube.com/watch?v=RGOj5yH7evk) - the basic git commands (Youtube).
-- [The Markdown Guide](https://www.markdownguide.org/) - for more help with writing markdown (Article).
-
-## Author
-
-- Github - [DannyLenk](https://github.com/DannyLenk)
-- Frontend Mentor - [@DannyLenk](https://www.frontendmentor.io/profile/DannyLenk)
-- Facebook - [Valerii Danylenko](https://www.facebook.com/valerii.danylenko)
-- LinkedIn - [Valerii Danylenko](https://www.linkedin.com/in/valerii-danylenko-74379212b)
-- insta - [valeriidanylenko](https://www.instagram.com/valeriidanylenko/?hl=ru)
-
-## Acknowledgments
-
-Thank you, Kevin Powell. Hats off to you and your clear English.
+Happy Coding!
