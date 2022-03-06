@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Put a title here</title>
+   <script>
+      function solution (num) {
+  let numNoTen = num;
+  let numArr = [];
+
+  let regex = /[IV]+/g;
+  let result = num.match(regex);
+
+  if (result === null) {
+    numArr.push(0);
+  } else if (num.charAt(num.length-1) === 'X') {
+    numArr.push(9)
+    numNoTen = num.slice(0, num.length-2);
+  } else {
+      switch(result[0]) {
+        case 'VIII': numArr.push(8);     
+          numNoTen = num.slice(0, num.length-4); break;
+        case 'VII': numArr.push(7);
+          numNoTen = num.slice(0, num.length-3); break;
+        case 'VI': numArr.push(6);
+          numNoTen = num.slice(0, num.length-2); break;
+        case 'V': numArr.push(5);
+          numNoTen = num.slice(0, num.length-1); break;
+        case 'IV': numArr.push(4);
+          numNoTen = num.slice(0, num.length-2); break;
+        case 'III': numArr.push(3);
+          numNoTen = num.slice(0, num.length-3); break;
+        case 'II': numArr.push(2);
+          numNoTen = num.slice(0, num.length-2); break;
+        case 'I': numArr.push(1);
+          numNoTen = num.slice(0, num.length-1); break;
+        case '': numArr.push(0);
+        // default: console.log('no such value');
+      }
+   }
+
+  let regexTen = /[XL]+/;
+  let resultTen = num.match(regexTen);
+
+  if (resultTen === null) {
+    numArr.unshift(0);
+  } else if (numNoTen.charAt(numNoTen.length-1) === 'C') {
+    numArr.unshift(9)
+    numNoTen = numNoTen.slice(0, numNoTen.length-2);
+  } else {
+      switch(resultTen[0]) {
+        case 'LXXX': numArr.unshift(8);     
+          numNoTen = numNoTen.slice(0, numNoTen.length-4);
+          break;
+        case 'LXX': numArr.unshift(7);
+          numNoTen = numNoTen.slice(0, numNoTen.length-3); 
+          break;
+        case 'LX': numArr.unshift(6);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'L': numArr.unshift(5);
+          numNoTen = numNoTen.slice(0, numNoTen.length-1); 
+          break;
+        case 'XL': numArr.unshift(4);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'XXX': numArr.unshift(3);
+          numNoTen = numNoTen.slice(0, numNoTen.length-3); 
+          break;
+        case 'XX': numArr.unshift(2);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'X': numArr.unshift(1);
+          numNoTen = numNoTen.slice(0, numNoTen.length-1); 
+          break;
+        case '': numArr.unshift(0);
+        // default: console.log('no such value');
+      }
+   }
+
+  let regexHundred = /[DC]+/;
+  let resultHundred = num.match(regexHundred);
+
+  if (resultHundred === null) {
+    numArr.unshift(0);
+  } else if (numNoTen.charAt(numNoTen.length-1) === 'M') {
+    numArr.unshift(9)
+    numNoTen = numNoTen.slice(0, numNoTen.length-2);
+  } else {
+      switch(resultHundred[0]) {
+        case 'DCCC': numArr.unshift(8);     
+          numNoTen = numNoTen.slice(0, numNoTen.length-4); 
+          break;
+        case 'DCC': numArr.unshift(7);
+          numNoTen = numNoTen.slice(0, numNoTen.length-3); 
+          break;
+        case 'DC': numArr.unshift(6);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'D': numArr.unshift(5);
+          numNoTen = numNoTen.slice(0, numNoTen.length-1); 
+          break;
+        case 'CD': numArr.unshift(4);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'CCC': numArr.unshift(3);
+          numNoTen = numNoTen.slice(0, numNoTen.length-3); 
+          break;
+        case 'CC': numArr.unshift(2);
+          numNoTen = numNoTen.slice(0, numNoTen.length-2); 
+          break;
+        case 'C': numArr.unshift(1);
+          numNoTen = numNoTen.slice(0, numNoTen.length-1); 
+          break;
+        case '': numArr.unshift(0);
+        // default: console.log('no such value');
+      }
+   }
+
+  if (numNoTen === 'M') {
+    numArr.unshift(1)
+  } else if (numNoTen === 'MM') {
+    numArr.unshift(2)
+  } else if (numNoTen === 'MMM') {
+    numArr.unshift(3);
+  }
+
+  const rawStr = numArr.join('');
+  const regExp = new RegExp("^0+(?!$)",'g');
+  const str = rawStr.replace(regExp, "");
+
+  return +str;
+
+
+}
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
