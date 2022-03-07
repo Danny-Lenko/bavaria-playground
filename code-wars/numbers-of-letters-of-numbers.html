@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Put a title here</title>
+   <script>
+      function numbersOfLetters(num) {
+         const namesArr = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'onezero', 'oneone', 'onetwo', 'onethree', 'onefour', 'onefive', 'onesix', 'oneseven', 'oneeight', 'onenine', 'twozero', 'twoone', 'twotwo', 'twothree', 'twofour', 'twofive'];
+         const myArr = [];
+
+         let firstNum = '';
+
+         num = num + '';
+         num = num.split('').map(Number);
+
+         for (let i = 0; i < num.length; i++) {
+            firstNum += namesArr[num[i]];
+         }
+
+         myArr.push(firstNum);
+
+         let counter = 0;
+         while (myArr[counter].length != namesArr.indexOf(myArr[counter])) {
+            myArr.push(namesArr[myArr[counter].length]);
+            counter++
+         }
+
+         return myArr;
+      }
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
