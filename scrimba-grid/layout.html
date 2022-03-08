@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Put a title here</title>
+   <script>
+      async function getBooks() {
+         let response = await fetch('books.json')
+         let books = await response.json()
+         let n = 1
+         return books.map(book => {
+            book.id = n
+            n += 1
+            return book
+         })
+      }
+
+      function getBookHtml(book) {
+         return `<div class="my-book">
+            <div class="my-book-cover">${book.title}</div>
+            <div class="my-book-spine"></div>
+            <div class="my-book-footer"></div>
+         </div>`
+      }
+
+      function displayLibrary(books) {
+         document.body.innerHTML = `<div class="my-library">
+            ${books.map(getBookHtml).join('')}
+         </div>`
+      }
+
+      getBooks()
+         .then(displayLibrary)
+         .catch(e => console.log(e))
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
