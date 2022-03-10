@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Put a title here</title>
+   <script>
+     function dataReverse(data) {
+         let dataRev = [];
+
+         while (data[7] || data[7] === 0) {
+            dataRev.unshift(data.splice(0, 8));
+         }
+
+         return dataRev.flat();
+      }
+
+      console.log(dataReverse([1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]));
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
