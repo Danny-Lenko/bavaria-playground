@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Put a title here</title>
+   <script>
+      function isValidWalk(walk) {
+         if (walk.length !== 10) return false;
+         
+         const north = [];
+         const south = [];
+         const west = [];
+         const east = [];
+         
+         walk.forEach(char => {
+            return (char === 'n') ? north.push('n') 
+               : (char === 's') ? south.push('s')
+               : (char === 'w') ? west.push('w')
+               : east.push('e');
+         })
+
+         return north.length === south.length && west.length === east.length;
+      }
+      // console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']));
+      // console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']));
+      console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']));
+      console.log(isValidWalk([ 'n', 'n', 'n', 's', 's', 's', 'e', 'w', 'n', 's']));
+   </script>
+</head>
+<body>
+   
+</body>
+</html>
